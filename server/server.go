@@ -194,6 +194,7 @@ func (s *Server) Connect(addr string) error {
 	}
 
 	// Make sure the peer is added before sending handshake
+	// TODO this is a hack. Find a better way to handle this
 	time.Sleep(100 * time.Millisecond)
 
 	s.addPeer <- peer
